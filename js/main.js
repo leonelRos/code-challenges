@@ -221,3 +221,40 @@ function sumNumbers(arr) {
   function formatWithPadding(num, string, num2) {
     
   }
+// this is a new challenge!!
+  function diag(arr){
+    let m = arr.length - 1;
+    let idx1 = m;
+    let n = arr.length - 1;
+    let idx2 = n;
+    let newArr = [];
+    for (idx1; idx1 >= 0; idx1--){
+      let check = idx1;
+      while(idx2 >= 0 && idx1 <= m)
+      {
+        console.log(arr[idx1][idx2]);
+        newArr.push(arr[idx1][idx2]);
+        idx1++;
+        idx2--;
+      }
+      idx1 = check;
+      idx2 = n;
+    }
+      idx1 = 0;
+      for (idx2 = n - 1; idx2 >= 0; idx2--){
+        check = idx2;
+        while(idx2 >= 0 && idx1 <= n){
+        console.log(arr[idx1][idx2]);
+        newArr.push(arr[idx1][idx2]);
+        idx1++;
+        idx2--;
+        }
+      idx2 = check;
+      idx1 = 0;
+      }
+  
+    return newArr;
+  }
+  
+  let testArr =[[1, 2, 3],[4, 5, 6], [7, 8, 9]];
+  console.log(diag(testArr));
