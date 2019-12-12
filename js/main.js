@@ -115,3 +115,109 @@ function srting(str) {
     
     console.log(srting('2the be5st'));
     console.log(srting('1good d6ay 3three'));
+
+
+// Challenge: 03-sumNumbers
+
+// Difficulty: Basic  
+
+// Prompt:
+
+// - Write a function called sumNumbers that accepts a single array of numbers and returns the sum of the numbers in the array.
+// - If the array is empty, return 0 (zero).
+
+// Examples:
+
+// sumNumbers([10]) //=> 10
+// sumNumbers([5, 10]) //=> 15
+// sumNumbers([2, 10, -5]) //=> 7
+// sumNumbers([]) //=> 0
+// -----------------------------------------------------------------*/
+// Your solution for 03-sumNumbers here:
+function sumNumbers(arr) {
+    let a = 0;
+    for (i = 0; i < arr.length; i++)
+      a += arr[i];
+    return a;
+  } 
+   console.log(sumNumbers([10,2,5]));
+  
+  // Challenge: 04-addList
+  
+  // Difficulty: Basic
+  
+  // Prompt:
+  
+  // - Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum.
+  // - Assume all parameters will be numbers.
+  // - If called with no arguments, return 0 (zero).
+  
+  // Examples:
+  
+  // add(1) //=> 1
+  // add(1,50,1.23) //=> 52.23
+  // add(7,-12) //=> -5
+  
+  function addList(){
+    var sum = 0
+   for (i = 0; i < arguments.length; i++) {
+     sum += arguments[i];
+   }
+   return sum;
+  }
+  console.log(addList(2,78));
+  
+  /*-----------------------------------------------------------------
+  Challenge: 05-computeRemainder
+  
+  Difficulty: Basic
+  
+  Prompt:
+  
+  - Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
+  - The first argument should be the dividend and the second argument should be the divisor.
+  - If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
+  - For extra fun, complete this challenge without using the modulus (%) operator.
+  
+  Examples:
+  
+  computeRemainder(10,2) //=> 0
+  computeRemainder(4,0) //=> Infinity
+  computeRemainder(10.5, 3) //=> 1.5
+  -----------------------------------------------------------------*/
+  // Your solution for 05-computeRemainder:
+  
+  // function computeRemainder(a , b){
+  // var div = 0
+  // div = a % b
+  // if(b === Infinity){
+  //   return 'lets call Infinity'
+  // }
+  // return div
+  // }
+  
+  function computeRemainder(dividend, divisor) {
+    if (divisor === 0) return Infinity;
+    return dividend - (Math.floor(dividend / divisor) * divisor);
+  }
+  console.log(computeRemainder(10,5));
+  console.log(computeRemainder(15,7));
+  console.log(computeRemainder(19,0));
+  
+  // - Write a function called formatWithPadding that accepts three arguments:
+  //     - A numeric argument (an integer) representing the number to format.
+  //     - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+  //     - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+  //   - The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+  //   - If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
+    
+  //   Examples:
+    
+  // formatWithPadding(123, '0', 5); //=> "00123"
+  // formatWithPadding(42, '*', 10); //=> "********42"
+  // formatWithPadding(1234, '*', 3); //=> "1234"
+  // Your solution for 10-formatWithPadding here:
+    
+  function formatWithPadding(num, string, num2) {
+    
+  }
