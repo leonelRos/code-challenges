@@ -292,3 +292,29 @@ for(var i = 0; i < cubes.length; i++) {
         display ("cube[" + i + "][" + j + "] = " + cube[j]);
     }
 }
+// learning curr in JS below
+var greetCurried = function(greeting) {
+  return function(name){
+    console.log(greeting + ', ' + name);
+  }
+}
+var greetHello = greetCurried("hello");
+greetCurried("hi there")("lauren")
+greetHello('Heidi');
+greetHello('Eddie');
+var greetDeeplyCurried = function(greeting){
+  return function (separator){
+    return function(emphasis){
+      return function(name){
+        console.log(greeting + separator + name + emphasis);
+      }
+    }
+  }
+}
+var greetAwkwardly = greetDeeplyCurried("hello")("...")("?");
+greetAwkwardly("heidi");
+greetAwkwardly("EDDIE");
+var greetHi = greetDeeplyCurried("hello")(", ");
+greetHi(".")("eddie");
+greetHi(".")("heidi");
+// Above is just a little syntax to keep on practicing!!!
