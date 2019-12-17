@@ -329,3 +329,33 @@ greetHi(".")("heidi");
 // Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
+function ListNode(val){
+  this.val = val;
+  this.next = null;
+}
+const l1 = new ListNode(2)
+l1.next = new ListNode(4)
+l1.next.next = new ListNode(3)
+
+const l2 = new ListNode(5)
+l2.next = new ListNode(6)
+l2.next.next = new ListNode(4)
+
+var addTwoNumbers = function(l1, l2) {
+  var newList = new ListNode("head");
+  var resultList = newList;
+  var carry = 0;
+  while(l1 || l2 || carry){
+    const v1 = l1 ? l1.val : 0
+    const v2 = l2 ? l2.val : 0
+    const v = v1 + v2 + carry
+
+    resultList.next= new ListNode(v % 10) //using ( % 10 is to obtain the first value)
+    resultList = resultList.next;
+    carry = v >= 10 ? 1: 0
+    l1 = l1 && l1.next
+    l2 = l2 && l2.next
+  }
+  return newList.next
+}
+console.log(addTwoNumbers(l1,l2));
