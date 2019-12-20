@@ -361,3 +361,6 @@ var addTwoNumbers = function(l1, l2) {
 console.log(addTwoNumbers(l1,l2));
 
 // Given a string, find the length of the longest substring without repeating characters.
+var lengthOfLongestSubstring = function(s) {
+    
+};
