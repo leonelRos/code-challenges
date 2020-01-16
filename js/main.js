@@ -364,3 +364,67 @@ console.log(addTwoNumbers(l1,l2));
 var lengthOfLongestSubstring = function(s) {
     
 };
+
+ /*-----------------------------------------------------------------
+  Challenge: 08-removeEnds
+  
+  Difficulty: Basic
+  
+  Prompt:
+  
+  - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
+  - If the length of the string argument is less than 3, return an empty string.
+  
+  Examples:
+  
+  removeEnds('SEI Rocks!'); //=> "DI Rocks"
+  removeEnds('a'); //=> "" (empty string)
+  -----------------------------------------------------------------*/
+  // Your solution for 08-removeEnds here:
+  
+  function removeEnds(string) {
+    let arr = string.split('')
+    let remove = ''
+    if (arr.length < 3) {
+      return ''
+    }
+    else {
+      newArr = arr.slice(1, -1)
+      remove = newArr.join('')
+    }
+  return remove;
+  }
+  
+  
+  
+  /*-----------------------------------------------------------------
+  Challenge: 09-charCount
+  
+  Difficulty: Basic
+  
+  Prompt:
+  
+  - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
+  - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
+  - Upper and lower case characters should be counted separately.
+  - Space characters should be count too.
+  
+  Examples:
+  
+  charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
+  charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
+  -----------------------------------------------------------------*/
+  // Your solution for 09-charCount here:
+  
+  function charCount(string) {
+    let count = {}
+    for (i = 0; i < string.length; i++) {
+      var char = string.charAt(i);
+      if (count[char]) {
+        count[char]++;
+      } else {
+        count[char] = 1
+      }
+    }
+    return count
+  }
