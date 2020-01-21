@@ -428,3 +428,76 @@ var lengthOfLongestSubstring = function(s) {
     }
     return count
   }
+
+  /*-----------------------------------------------------------------
+Challenge: 10-formatWithPadding
+
+Difficulty: Basic
+
+Prompt:
+
+- Write a function called formatWithPadding that accepts three arguments:
+  - A numeric argument (an integer) representing the number to format.
+  - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+  - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+- The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+- If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
+
+Examples:
+
+formatWithPadding(123, '0', 5); //=> "00123"
+formatWithPadding(42, '*', 10); //=> "********42"
+formatWithPadding(1234, '*', 3); //=> "1234"
+-----------------------------------------------------------------*/
+// Your solution for 10-formatWithPadding here:
+
+/*--- Using for while loop ---*/
+function formatWithPadding(int, char, length) {
+  var result = int.toFixed(0);
+  while (result.length < length) {
+    result = char + result;
+  }
+  return result;
+}
+
+/*-----------------------------------------------------------------
+Challenge: 11-isPalindrome
+
+Difficulty: Intermediate
+
+Prompt:
+
+- Write a function called isPalindrome that accepts a single string argument, then returns true or false depending upon whether or not the string is a palindrome.
+- A palindrome is a word or phrase that are the same forward or backward.
+- Casing and spaces are not included when considering whether or not a string is a palindrome.
+- If the length of the string is 0 or 1, return true.
+
+Examples:
+
+isPalindrome('SEI Rocks'); //=> false
+isPalindrome('rotor'); //=> true
+isPalindrome('A nut for a jar of tuna'); //=> true
+isPalindrome(''); //=> true
+-----------------------------------------------------------------*/
+// Your solution for 11-isPalindrome here:
+
+/*--- Using a for loop ---*/
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  // loop to replace spaces
+  while (str.includes(' ')) str = str.replace(' ', '');
+  for (var i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str.charAt(i) !== str.charAt(str.length - i - 1)) return false;
+  }
+  return true;
+}
+
+/*--- Using regular expression to replace spaces ---*/
+// function isPalindrome(str) {
+//   // regular expression to replace all spaces
+//   str = str.toLowerCase().replace(/ /g, '');
+//   for (var i = 0; i < Math.floor(str.length / 2); i++) {
+//     if (str.charAt(i) !== str.charAt(str.length - i - 1)) return false;
+//   }
+//   return true;
+// }
