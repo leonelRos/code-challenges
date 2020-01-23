@@ -362,6 +362,19 @@ console.log(addTwoNumbers(l1,l2));
 
 // Given a string, find the length of the longest substring without repeating characters.
 var lengthOfLongestSubstring = function(s) {
+  var res=0;
+    var tem=[];
+    for (var char of s){
+        var idx = tem.indexOf(char);
+        if (idx> -1) { 
+            tem = tem.slice(idx + 1)
+        }
+        tem.push(char);
+        if(tem.length > res) {
+            res = tem.length
+        }
+    }
+    return res;
     
 };
 
