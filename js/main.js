@@ -579,3 +579,65 @@ function mumble(str) {
 // function mumble(str) {
 //   return str.split('').reduce((result, c, i) => result + ((i || '') && '-') + c.repeat(i + 1), '');
 // }
+
+// Challenge: 14-fromPairs
+
+// Difficulty: Intermediate
+
+// Prompt:
+
+// - Write a function named fromPairs that creates an object from an array containing nested arrays.
+// - Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+// - If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
+
+// Examples:
+
+// fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
+// fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
+// Your solution for 14-fromPairs here:
+
+/*--- using forEach ---*/
+function fromPairs(arr) {
+  var obj = {};
+  arr.forEach(function(kvArr) {
+    obj[kvArr[0]] = kvArr[1];
+  });
+  return obj;
+}
+
+/*--- using reduce & arrow function ---*/
+// function fromPairs(arr) {
+//   return arr.reduce((obj, kvArr) => {
+//       obj[kvArr[0]] = kvArr[1];
+//       return obj;
+//   }, {});
+// }
+
+/*-----------------------------------------------------------------
+Challenge: 15-mergeObjects
+
+Difficulty:  Intermediate
+
+Prompt:
+
+- Write a function named mergeObjects that accepts at least two objects as arguments, merges the properties of the second through n objects into the first object, then finally returns the first object.
+- If any objects have the same property key, values from the object(s) later in the arguments list should overwrite earlier values.
+
+Examples:
+
+mergeObjects({}, {a: 1});  //=> {a: 1} (same object as first arg)
+mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
+mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
+-----------------------------------------------------------------*/
+// Your solution for 15-mergeObjects here:
+
+/*--- Using ES2015's rest parameter syntax ---*/
+function mergeObjects(target, ...objects) {
+  objects.forEach(function(obj) {
+    // using ES2015's 'for in' loop
+    for(var key in obj) {
+      target[key] = obj[key];
+    }
+  });
+  return target;
+}
