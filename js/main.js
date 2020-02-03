@@ -922,3 +922,99 @@ function primeFactors(n) {
 //   factors.push(n);
 //   return factors;
 // }
+/*-----------------------------------------------------------------
+Challenge: 22-intersection
+
+Difficulty: Intermediate
+
+Prompt:
+
+- Write a function named intersection that accepts two arguments which are both arrays.  The array arguments may contain any mixture of strings, numbers and/or booleans - but no reference types, i.e., objects.
+- The function should return a new array containing all elements in common, including repeating element values.
+- The ordering of the elements in the returned is not important.
+- If there are no elements in the arrays in common,  the intersection function should return an empty array.
+- The function should not mutate (change) either argument.
+
+Examples:
+
+intersection(['a', 1], []) //=> []
+intersection(['a', 1], [true, 'a', 15]) //=> ['a']
+intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
+-----------------------------------------------------------------*/
+// Your solution for 22-intersection here:
+
+function intersection(a1, a2) {
+  var result = [];
+  // create copy of 2nd array for purpose of handling dups
+  var _a2 = [...a2];
+  a1.forEach(val => {
+    var idx = _a2.indexOf(val);
+    if (idx > -1) result.push(_a2.splice(idx, 1)[0]);
+  });
+  return result;
+}
+
+/*-----------------------------------------------------------------
+Challenge: 23-balancedBrackets
+
+Difficulty:  Intermediate
+
+Prompt:
+
+- Write a function called balancedBrackets that accepts a single string as argument.
+- The input string is composed entirely of parentheses, brackets and/or curly braces, i.e.,  (), [] and/or {}. Referred to as "braces" from this point forward...
+- The balancedBraces function should return true if the string's braces are "balanced" and false if they are not.
+- The brackets are considered unbalanced if any closing bracket does not close the same type of opening bracket, ignoring already matched brackets between them.  Examples explain it best...
+
+Examples:
+
+balancedBrackets( '()' ) // => true
+balancedBrackets( '(]' ) // => false
+balancedBrackets( '[{}]' ) // => true
+balancedBrackets( '[(])' ) // => false
+balancedBrackets( '[({}[])]' ) // => true
+-----------------------------------------------------------------*/
+// Your solution for 23-balancedBrackets here:
+
+/*
+  The solution for this challenge is best implemented using
+  a data structure known as a 'stack'. Think of a stack working a lot
+  like a stack of papers where you always place new papers on top
+  and always remove the top paper.
+*/
+
+function balancedBrackets(str) {
+  // can't be balanced if string odd in length
+  if (str.length % 2) return false;
+  var stack = [];
+  for (var i = 0; i < str.length; i++) {
+    var b = str.charAt(i);
+    if ( '([{'.includes(b) ) {
+      // add opening brackets to the stack
+      stack.push(b);
+    } else {
+      // not an opening bracket, so remove last opening and check if matched
+      if (!'() {} []'.includes(stack.pop() + b)) return false;
+    }
+  }
+  return true;
+}
+
+/*--- Using Array.every method to iterate unless false is returned
+      Also using arrow function ---*/
+// function balancedBrackets(str) {
+//   var stack = [];
+//   return str.split('').every(c => {
+//     if ('([{'.includes(c)) {
+//       return stack.push(c);
+//     } else {
+//       return '() {} []'.includes(stack.pop() + c)
+//     }
+//   });
+// }
+
+/*--- Holy ternary Batman! Almost a one-liner! ---*/
+// function balancedBrackets(str) {
+//   var a = [];
+//   return str.split('').every(c => '([{'.includes(c) ? a.push(c) : '() {} []'.includes(a.pop() + c));
+// }
