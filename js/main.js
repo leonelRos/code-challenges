@@ -1269,3 +1269,12 @@ const solution = (arr) => {
   const right = sum(arr, 3);
   return (left == right) ? "" : (left > right ? "Left" : "Right");
 };
+
+// write a function that takes a list of numbers and returns the largest number 
+// if there are not numbers in the list return 0 in the list javascript
+
+// solution
+const solution = (numbers) => {
+  var newList = Math.max(...numbers);
+   return newList;
+};
