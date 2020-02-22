@@ -1290,3 +1290,16 @@ const solution = (numbers) => {
 // Example:
 //S: "carrace"
 //output: true
+
+
+
+
+
+
+
+
+// You are at the bottom of staircase with N stairs. You can jump 1,2, or 3 stairs
+//at a time. How many different ways can you jump up the stairs
+//Example: 
+//N= 3
+//Output : 4
