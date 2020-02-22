@@ -1278,3 +1278,15 @@ const solution = (numbers) => {
   var newList = Math.max(...numbers);
    return newList;
 };
+
+// Given an array of number, write a function to sort the array without using any naative sort functions
+
+  // unresolve problem
+
+
+
+
+// Write a function that takes in a string, S, and returns TRUE if S is a permutation of a palindrome and false otherwise
+// Example:
+//S: "carrace"
+//output: true
