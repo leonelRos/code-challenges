@@ -1312,3 +1312,6 @@ function recursiveSteps(steps) {
   
     return total;
   }
+console.log(recursiveSteps(5))
+console.log(recursiveSteps(7))
+console.log(recursiveSteps(10))
