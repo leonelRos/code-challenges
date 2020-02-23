@@ -1290,12 +1290,21 @@ const solution = (numbers) => {
 // Example:
 //S: "carrace"
 //output: true
+function palindrome(str) {
+  var chrs = str.toLowerCase().replace(/[\W_]/g, "");
+  var firstHalf = chrs.substr(0,chrs.length/2);
+  var secondHalf = chrs.substr(chrs.length/2);
+  
+  if(chrs.length % 2 === 0){
+  	return firstHalf == secondHalf.split("").reverse().join("");
+  } else {  	
+    return firstHalf == secondHalf.substr(1).split("").reverse().join("");  	
+  }
+}
 
-
-
-
-
-
+console.log(palindrome('racecar'));
+console.log(palindrome('carrace'));
+console.log(palindrome('eye'));
 
 
 // You are at the bottom of staircase with N stairs. You can jump 1,2, or 3 stairs
