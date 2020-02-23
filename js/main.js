@@ -1303,3 +1303,12 @@ const solution = (numbers) => {
 //Example: 
 //N= 3
 //Output : 4
+function recursiveSteps(steps) {
+    var total = 1;
+  
+    for (var i = 2; i <= steps; i++) {
+      total += recursiveSteps(steps - i);
+    }
+  
+    return total;
+  }
