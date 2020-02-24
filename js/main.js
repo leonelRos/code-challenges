@@ -1355,4 +1355,31 @@ function stock(prices){
   console.log(stock([6,0,-1,10]))
   console.log(stock([8,0,3,10]))
 
+// Given two strings, return TRUE, if the strings are isomorphic and FALSE otherwise. 
+// Two strings are isomorphic when you can rewrite every occurence of a character with a diff character. for as many as you want
+// Only restriction is when you replace one character youo must replace all other chaaracters of that type
+
+function isomorphic (s, t) {
+	
+  var len1 = s.length;  
+  if (len1 != t.length) {
+      console.log('Both strings have different lenghts');
+    return false;
+  }
   
+  var chMap = {};
+  
+  for (var i = 0; i < len1; i++) {
+      if (!chMap[s[i]]) {   	
+          chMap[s[i]] = t[i];   
+      } else if (chMap[s[i]] !== t[i]) {
+        // console.log('Both strings differ in maaping at index ' + i);
+          return false;
+      }
+  }
+  return true;
+}
+
+console.log(isomorphic('foo','bar')); // false
+console.log(isomorphic('foo','baa')); // true
+console.log(isomorphic('papa','kike')); // true
