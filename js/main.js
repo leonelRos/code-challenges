@@ -1324,3 +1324,35 @@ function recursiveSteps(steps) {
 console.log(recursiveSteps(5))
 console.log(recursiveSteps(7))
 console.log(recursiveSteps(10))
+
+// Suppose you are given a list of integers, PRICES, that represents the stock of GOOGLE's stock overtime.
+// PRICES[i] is the price of the stockon day i. you must buy the stock once and then later sell it.
+// You are not allowed to sell before you buy.
+// write a function that returns an integer, which is the maximun profit you can make from buying the stock then sell it.
+// if the list is empyt return 0
+
+function stock(prices){
+  var buy = -1, sell =-1, profit = -1;
+  var changeSellPrice = true;
+  for(var i=0; i< prices.length; i++){
+    if(buy===-1){
+      buy= prices[i];
+    }
+    if(buy> prices[i]){
+      buy = prices[i];
+      changeSellPrice = true;
+    }		
+    if(changeSellPrice || sell< prices[i+1] ){
+      sell = prices[i+1];
+      if(profit< (sell-buy)){
+        profit = sell - buy;
+        changeSellPrice = false;
+      }
+    }
+  }
+    return profit;
+  }
+  console.log(stock([6,0,-1,10]))
+  console.log(stock([8,0,3,10]))
+
+  
