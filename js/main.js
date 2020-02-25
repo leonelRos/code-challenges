@@ -1380,6 +1380,5 @@ function isomorphic (s, t) {
   return true;
 }
 
-console.log(isomorphic('foo','bar')); // false
-console.log(isomorphic('foo','baa')); // true
-console.log(isomorphic('papa','kike')); // true
+console.log(isomorphic('foo','bar'));
+console.log(isomorphic('papa','kike'));
