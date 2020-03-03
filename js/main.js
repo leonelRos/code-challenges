@@ -1382,3 +1382,48 @@ function isomorphic (s, t) {
 
 console.log(isomorphic('foo','bar'));
 console.log(isomorphic('papa','kike'));
+
+
+
+// challenge 1 leetcode
+// There are two sorted arrays nums1 and nums2 of size m and n respectively.
+// Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+// You may assume nums1 and nums2 cannot be both empty.
+// example:
+// nums1 = [1, 3]
+// nums2 = [2]
+
+// The median is 2.0
+
+var findMedianSortedArrays = function(nums1, nums2) {
+  let totalCount = nums1.length + nums2.length;
+  let combined = [];
+  let a = nums1.shift();
+  let b = nums2.shift();
+  let count = 0;
+  while (count < totalCount) {
+      if (typeof a === 'undefined') {
+          combined.push(b);
+          b = nums2.shift();
+      } else if (typeof b === 'undefined') {
+          combined.push(a);
+          a = nums1.shift();
+      } else if (a < b) {
+          combined.push(a);
+          a = nums1.shift();
+      } else {
+          combined.push(b);
+          b = nums2.shift();
+      }
+      count++;
+  }
+
+  let middleIndex = Math.floor(combined.length/2);
+  if (combined.length % 2 != 0){
+      //Return the middle value if number of total elements is odd
+      return (combined[middleIndex]);
+  } else{
+      //Return the average of the middle values if number of total elements is even
+      return (combined[middleIndex-1] + combined[middleIndex])/2;
+  }
+};
