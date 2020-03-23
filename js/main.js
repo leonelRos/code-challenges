@@ -1427,3 +1427,5 @@ var findMedianSortedArrays = function(nums1, nums2) {
       return (combined[middleIndex-1] + combined[middleIndex])/2;
   }
 };
+
+// how to pick a random element from a infinite stream
