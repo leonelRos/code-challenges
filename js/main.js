@@ -1429,14 +1429,50 @@ var findMedianSortedArrays = function(nums1, nums2) {
 };
 
 // how to pick a random element from a infinite stream
-import random
+import random;
 
 def pick(big_stream):
-  random_element = None
+  random_element = Nonew
 
-    for i, e in enumerate(big_stream):
-        if i == 0:
+    for (i, e in enumerate(big_stream):
+        if (i == 0):
             random_element = e
-        if random.randint(1, i + 1) == 1:
-            random_element = e
+        if (random.randint(1, i + 1) == 1):
+          random_element = e
     return random_element
+
+
+// Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+// Input: "babad"
+// Output: "bab"
+// Note: "aba" is also a valid answer.
+
+//first we check if it is palindrome 
+function isPalindrome (s) {
+  var pal = s.split('').reverse().join('');
+  return s == pal;
+};
+
+// now we proceed to find the longest palindrome
+function longestPalindrome (s) {
+  var max_length = 0;
+  maxLen = '';
+  for(var i = 0; i< s.length; i++){
+    // we identify the substring and assign to a variable 
+      var subs = s.substr(i, s.length) 
+      for(var j = subs.length; j >= 0; j--){
+         var subStr = subs.substr(0,j);
+          if(subStr.length <= 1)
+              continue;
+          if (isPalindrome (subStr)){
+              if(subStr.length > max_length){
+                  max_length == subStr
+                  maxLen = subStr
+              }
+          }
+          
+      }
+  }
+  return maxLen;
+}
+
