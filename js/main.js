@@ -1429,17 +1429,17 @@ var findMedianSortedArrays = function(nums1, nums2) {
 };
 
 // how to pick a random element from a infinite stream
-import random;
+// import random;
 
-def pick(big_stream):
-  random_element = Nonew
+// def pick(big_stream):
+//   random_element = Nonew
 
-    for (i, e in enumerate(big_stream):
-        if (i == 0):
-            random_element = e
-        if (random.randint(1, i + 1) == 1):
-          random_element = e
-    return random_element
+//     for (i, e in enumerate(big_stream):
+//         if (i == 0):
+//             random_element = e
+//         if (random.randint(1, i + 1) == 1):
+//           random_element = e
+//     return random_element
 
 
 // Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
