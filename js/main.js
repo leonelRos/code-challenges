@@ -1592,3 +1592,51 @@ function longestPalindrome(s) {
 
 let testCase = "cccaba";
 console.log("Longest Palindromic Substring: " + longestPalindrome(testCase));
+
+
+// Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+
+// Example 1:
+
+// Input: 121
+// Output: true
+// Example 2:
+
+// Input: -121
+// Output: false
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+// Example 3:
+
+// Input: 10
+// Output: false
+// Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+
+//find the string of a palindrome
+
+const str = 121;
+function isPalindrome (str) {
+  str = str.toString()
+  // replace method and tolowercase method only if a string is given
+  // str = str.replace(/\W/g, '');
+  // str = str.toLowerCase();
+    console.log(str)
+  // iterate through the string 
+  for( let i = 0; i < str.length; i++){
+    console.log(i);
+    // comparing the first letter in the string and the last letter in the string
+    if(str[i] !== str[str.length - 1 - i]){
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPalindrome(str));
+
+function isPalindromeToo(str) {
+  // replace and tolowercase method only if a string is given.
+  str = str.replace(/\W/g, "");
+  str = str.toLowerCase();
+
+  return str === str.split('').reverse().join('');
+}
+console.log(isPalindromeToo(str));
