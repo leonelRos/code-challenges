@@ -1,26 +1,26 @@
-function multiply(a,b) {
-    if (a < 0 && b > 0){
-      return b * a
-    }
-    return a - b;
-   }
-   
-   console.log(multiply(-5,4));
-   console.log(multiply(10,6));
-   console.log(multiply(9,7));
-   
-   
-   function getCount(str){
-     var vowelsCount = 0;
-     var vowel_list = 'aeiou';
-     for (x = 0; x < str.length; x++) {
-       if(vowel_list.indexOf(str[x]) !== -1)
-        vowelsCount += 1
-       }
-         return vowelsCount;
-   }
-   console.log(getCount('this is it'));
-   console.log(getCount('what are you talking about'));
+function multiply(a, b) {
+  if (a < 0 && b > 0) {
+    return b * a
+  }
+  return a - b;
+}
+
+console.log(multiply(-5, 4));
+console.log(multiply(10, 6));
+console.log(multiply(9, 7));
+
+
+function getCount(str) {
+  var vowelsCount = 0;
+  var vowel_list = 'aeiou';
+  for (x = 0; x < str.length; x++) {
+    if (vowel_list.indexOf(str[x]) !== -1)
+      vowelsCount += 1
+  }
+  return vowelsCount;
+}
+console.log(getCount('this is it'));
+console.log(getCount('what are you talking about'));
 
 
 // const arr =[1,2,3,4];
@@ -42,17 +42,17 @@ function multiply(a,b) {
 
 
 var cubes = [
-    [1, 2, 3],
-    [4, 5, 6],    
-    [7, 8, 9],
-   ];
-   
-   for(var i = 0; i < cubes.length; i++) {
-       var cube = cubes[i];
-       for(var j = 0; j < cube.length; j++) {
-           display ("cube[" + i + "][" + j + "] = " + cube[j]);
-       }
-   }
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+for (var i = 0; i < cubes.length; i++) {
+  var cube = cubes[i];
+  for (var j = 0; j < cube.length; j++) {
+    display("cube[" + i + "][" + j + "] = " + cube[j]);
+  }
+}
 
 
 
@@ -60,6 +60,7 @@ var cubes = [
 // - Write a recursive JavaScript function to calculate the factorial of a number.
 // - In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 x 4 x 3 x 2 x 1 = 120 
 let finalRes = 1
+
 function fact(num) {
   if (num > 0) {
     finalRes = finalRes * num;
@@ -90,10 +91,11 @@ console.log(gcd(27, 18))
 
 
 var arr = [];
+
 function range(a, b) {
   if (a < b - 1) {
-    arr.push(a+1);
-    return range(a+1, b);
+    arr.push(a + 1);
+    return range(a + 1, b);
   } else {
     return arr;
   }
@@ -103,18 +105,18 @@ console.log(range(2, 9));
 
 
 function srting(str) {
-    result = [];
-    str = str.split(' ');
-      for(i = 1; i <= str.length; i++){
-        str.forEach(x => x.includes(i) ? result.push(x) :     console.log(x))
-        }
-        return result.join(' ')
-      }
-      // return result.join('');
-    
-    
-    console.log(srting('2the be5st'));
-    console.log(srting('1good d6ay 3three'));
+  result = [];
+  str = str.split(' ');
+  for (i = 1; i <= str.length; i++) {
+    str.forEach(x => x.includes(i) ? result.push(x) : console.log(x))
+  }
+  return result.join(' ')
+}
+// return result.join('');
+
+
+console.log(srting('2the be5st'));
+console.log(srting('1good d6ay 3three'));
 
 
 // Challenge: 03-sumNumbers
@@ -135,133 +137,136 @@ function srting(str) {
 // -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 function sumNumbers(arr) {
-    let a = 0;
-    for (i = 0; i < arr.length; i++)
-      a += arr[i];
-    return a;
-  } 
-   console.log(sumNumbers([10,2,5]));
-  
-  // Challenge: 04-addList
-  
-  // Difficulty: Basic
-  
-  // Prompt:
-  
-  // - Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum.
-  // - Assume all parameters will be numbers.
-  // - If called with no arguments, return 0 (zero).
-  
-  // Examples:
-  
-  // add(1) //=> 1
-  // add(1,50,1.23) //=> 52.23
-  // add(7,-12) //=> -5
-  
-  function addList(){
-    var sum = 0
-   for (i = 0; i < arguments.length; i++) {
-     sum += arguments[i];
-   }
-   return sum;
+  let a = 0;
+  for (i = 0; i < arr.length; i++)
+    a += arr[i];
+  return a;
+}
+console.log(sumNumbers([10, 2, 5]));
+
+// Challenge: 04-addList
+
+// Difficulty: Basic
+
+// Prompt:
+
+// - Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum.
+// - Assume all parameters will be numbers.
+// - If called with no arguments, return 0 (zero).
+
+// Examples:
+
+// add(1) //=> 1
+// add(1,50,1.23) //=> 52.23
+// add(7,-12) //=> -5
+
+function addList() {
+  var sum = 0
+  for (i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
   }
-  console.log(addList(2,78));
-  
-  /*-----------------------------------------------------------------
-  Challenge: 05-computeRemainder
-  
-  Difficulty: Basic
-  
-  Prompt:
-  
-  - Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
-  - The first argument should be the dividend and the second argument should be the divisor.
-  - If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
-  - For extra fun, complete this challenge without using the modulus (%) operator.
-  
-  Examples:
-  
-  computeRemainder(10,2) //=> 0
-  computeRemainder(4,0) //=> Infinity
-  computeRemainder(10.5, 3) //=> 1.5
-  -----------------------------------------------------------------*/
-  // Your solution for 05-computeRemainder:
-  
-  // function computeRemainder(a , b){
-  // var div = 0
-  // div = a % b
-  // if(b === Infinity){
-  //   return 'lets call Infinity'
-  // }
-  // return div
-  // }
-  
-  function computeRemainder(dividend, divisor) {
-    if (divisor === 0) return Infinity;
-    return dividend - (Math.floor(dividend / divisor) * divisor);
-  }
-  console.log(computeRemainder(10,5));
-  console.log(computeRemainder(15,7));
-  console.log(computeRemainder(19,0));
-  
-  // - Write a function called formatWithPadding that accepts three arguments:
-  //     - A numeric argument (an integer) representing the number to format.
-  //     - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
-  //     - Another numeric argument (an integer) representing the length to "pad" the returned string to.
-  //   - The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
-  //   - If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
-    
-  //   Examples:
-    
-  // formatWithPadding(123, '0', 5); //=> "00123"
-  // formatWithPadding(42, '*', 10); //=> "********42"
-  // formatWithPadding(1234, '*', 3); //=> "1234"
-  // Your solution for 10-formatWithPadding here:
-    
-  function formatWithPadding(num, string, num2) {
-    
-  }
+  return sum;
+}
+console.log(addList(2, 78));
+
+/*-----------------------------------------------------------------
+Challenge: 05-computeRemainder
+
+Difficulty: Basic
+
+Prompt:
+
+- Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
+- The first argument should be the dividend and the second argument should be the divisor.
+- If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
+- For extra fun, complete this challenge without using the modulus (%) operator.
+
+Examples:
+
+computeRemainder(10,2) //=> 0
+computeRemainder(4,0) //=> Infinity
+computeRemainder(10.5, 3) //=> 1.5
+-----------------------------------------------------------------*/
+// Your solution for 05-computeRemainder:
+
+// function computeRemainder(a , b){
+// var div = 0
+// div = a % b
+// if(b === Infinity){
+//   return 'lets call Infinity'
+// }
+// return div
+// }
+
+function computeRemainder(dividend, divisor) {
+  if (divisor === 0) return Infinity;
+  return dividend - (Math.floor(dividend / divisor) * divisor);
+}
+console.log(computeRemainder(10, 5));
+console.log(computeRemainder(15, 7));
+console.log(computeRemainder(19, 0));
+
+// - Write a function called formatWithPadding that accepts three arguments:
+//     - A numeric argument (an integer) representing the number to format.
+//     - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+//     - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+//   - The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+//   - If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
+
+//   Examples:
+
+// formatWithPadding(123, '0', 5); //=> "00123"
+// formatWithPadding(42, '*', 10); //=> "********42"
+// formatWithPadding(1234, '*', 3); //=> "1234"
+// Your solution for 10-formatWithPadding here:
+
+function formatWithPadding(num, string, num2) {
+
+}
 // this is a new challenge!!
-  function diag(arr){
-    let m = arr.length - 1;
-    let idx1 = m;
-    let n = arr.length - 1;
-    let idx2 = n;
-    let newArr = [];
-    for (idx1; idx1 >= 0; idx1--){
-      let check = idx1;
-      while(idx2 >= 0 && idx1 <= m)
-      {
-        console.log(arr[idx1][idx2]);
-        newArr.push(arr[idx1][idx2]);
-        idx1++;
-        idx2--;
-      }
-      idx1 = check;
-      idx2 = n;
+function diag(arr) {
+  let m = arr.length - 1;
+  let idx1 = m;
+  let n = arr.length - 1;
+  let idx2 = n;
+  let newArr = [];
+  for (idx1; idx1 >= 0; idx1--) {
+    let check = idx1;
+    while (idx2 >= 0 && idx1 <= m) {
+      console.log(arr[idx1][idx2]);
+      newArr.push(arr[idx1][idx2]);
+      idx1++;
+      idx2--;
     }
-      idx1 = 0;
-      for (idx2 = n - 1; idx2 >= 0; idx2--){
-        check = idx2;
-        while(idx2 >= 0 && idx1 <= n){
-        console.log(arr[idx1][idx2]);
-        newArr.push(arr[idx1][idx2]);
-        idx1++;
-        idx2--;
-        }
-      idx2 = check;
-      idx1 = 0;
-      }
-  
-    return newArr;
+    idx1 = check;
+    idx2 = n;
   }
-  
-  let testArr =[[1, 2, 3],[4, 5, 6], [7, 8, 9]];
-  console.log(diag(testArr));
+  idx1 = 0;
+  for (idx2 = n - 1; idx2 >= 0; idx2--) {
+    check = idx2;
+    while (idx2 >= 0 && idx1 <= n) {
+      console.log(arr[idx1][idx2]);
+      newArr.push(arr[idx1][idx2]);
+      idx1++;
+      idx2--;
+    }
+    idx2 = check;
+    idx1 = 0;
+  }
+
+  return newArr;
+}
+
+let testArr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+console.log(diag(testArr));
 
 
 // another challenge
-const arr =[1,2,3,4];
+const arr = [1, 2, 3, 4];
 
 
 // for( let i = 0; i < arr.length; i++) {
@@ -281,20 +286,20 @@ const arr =[1,2,3,4];
 
 
 var cubes = [
- [1, 2, 3],
- [4, 5, 6],    
- [7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
 
-for(var i = 0; i < cubes.length; i++) {
-    var cube = cubes[i];
-    for(var j = 0; j < cube.length; j++) {
-        display ("cube[" + i + "][" + j + "] = " + cube[j]);
-    }
+for (var i = 0; i < cubes.length; i++) {
+  var cube = cubes[i];
+  for (var j = 0; j < cube.length; j++) {
+    display("cube[" + i + "][" + j + "] = " + cube[j]);
+  }
 }
 // learning curr in JS below
-var greetCurried = function(greeting) {
-  return function(name){
+var greetCurried = function (greeting) {
+  return function (name) {
     console.log(greeting + ', ' + name);
   }
 }
@@ -302,10 +307,10 @@ var greetHello = greetCurried("hello");
 greetCurried("hi there")("lauren")
 greetHello('Heidi');
 greetHello('Eddie');
-var greetDeeplyCurried = function(greeting){
-  return function (separator){
-    return function(emphasis){
-      return function(name){
+var greetDeeplyCurried = function (greeting) {
+  return function (separator) {
+    return function (emphasis) {
+      return function (name) {
         console.log(greeting + separator + name + emphasis);
       }
     }
@@ -320,7 +325,7 @@ greetHi(".")("heidi");
 // Above is just a little syntax to keep on practicing!!!
 
 
- //practice LINKED LIST
+//practice LINKED LIST
 // You are given two non-empty linked lists representing two non-negative integers. 
 // The digits are stored in reverse order and each of their nodes contain a single digit. 
 // Add the two numbers and return it as a linked list.
@@ -329,7 +334,7 @@ greetHi(".")("heidi");
 // Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
-function ListNode(val){
+function ListNode(val) {
   this.val = val;
   this.next = null;
 }
@@ -341,108 +346,107 @@ const l2 = new ListNode(5)
 l2.next = new ListNode(6)
 l2.next.next = new ListNode(4)
 
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = function (l1, l2) {
   var newList = new ListNode("head");
   var resultList = newList;
   var carry = 0;
-  while(l1 || l2 || carry){
+  while (l1 || l2 || carry) {
     const v1 = l1 ? l1.val : 0
     const v2 = l2 ? l2.val : 0
     const v = v1 + v2 + carry
 
-    resultList.next= new ListNode(v % 10) //using ( % 10 is to obtain the first value)
+    resultList.next = new ListNode(v % 10) //using ( % 10 is to obtain the first value)
     resultList = resultList.next;
-    carry = v >= 10 ? 1: 0
+    carry = v >= 10 ? 1 : 0
     l1 = l1 && l1.next
     l2 = l2 && l2.next
   }
   return newList.next
 }
-console.log(addTwoNumbers(l1,l2));
+console.log(addTwoNumbers(l1, l2));
 
 // Given a string, find the length of the longest substring without repeating characters.
-var lengthOfLongestSubstring = function(s) {
-  var res=0;
-    var tem=[];
-    for (var char of s){
-        var idx = tem.indexOf(char);
-        if (idx> -1) { 
-            tem = tem.slice(idx + 1)
-        }
-        tem.push(char);
-        if(tem.length > res) {
-            res = tem.length
-        }
+var lengthOfLongestSubstring = function (s) {
+  var res = 0;
+  var tem = [];
+  for (var char of s) {
+    var idx = tem.indexOf(char);
+    if (idx > -1) {
+      tem = tem.slice(idx + 1)
     }
-    return res;
-    
+    tem.push(char);
+    if (tem.length > res) {
+      res = tem.length
+    }
+  }
+  return res;
+
 };
 
- /*-----------------------------------------------------------------
-  Challenge: 08-removeEnds
-  
-  Difficulty: Basic
-  
-  Prompt:
-  
-  - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
-  - If the length of the string argument is less than 3, return an empty string.
-  
-  Examples:
-  
-  removeEnds('SEI Rocks!'); //=> "DI Rocks"
-  removeEnds('a'); //=> "" (empty string)
-  -----------------------------------------------------------------*/
-  // Your solution for 08-removeEnds here:
-  
-  function removeEnds(string) {
-    let arr = string.split('')
-    let remove = ''
-    if (arr.length < 3) {
-      return ''
-    }
-    else {
-      newArr = arr.slice(1, -1)
-      remove = newArr.join('')
-    }
-  return remove;
-  }
-  
-  
-  
-  /*-----------------------------------------------------------------
-  Challenge: 09-charCount
-  
-  Difficulty: Basic
-  
-  Prompt:
-  
-  - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
-  - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
-  - Upper and lower case characters should be counted separately.
-  - Space characters should be count too.
-  
-  Examples:
-  
-  charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
-  charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
-  -----------------------------------------------------------------*/
-  // Your solution for 09-charCount here:
-  
-  function charCount(string) {
-    let count = {}
-    for (i = 0; i < string.length; i++) {
-      var char = string.charAt(i);
-      if (count[char]) {
-        count[char]++;
-      } else {
-        count[char] = 1
-      }
-    }
-    return count
-  }
+/*-----------------------------------------------------------------
+ Challenge: 08-removeEnds
+ 
+ Difficulty: Basic
+ 
+ Prompt:
+ 
+ - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
+ - If the length of the string argument is less than 3, return an empty string.
+ 
+ Examples:
+ 
+ removeEnds('SEI Rocks!'); //=> "DI Rocks"
+ removeEnds('a'); //=> "" (empty string)
+ -----------------------------------------------------------------*/
+// Your solution for 08-removeEnds here:
 
-  /*-----------------------------------------------------------------
+function removeEnds(string) {
+  let arr = string.split('')
+  let remove = ''
+  if (arr.length < 3) {
+    return ''
+  } else {
+    newArr = arr.slice(1, -1)
+    remove = newArr.join('')
+  }
+  return remove;
+}
+
+
+
+/*-----------------------------------------------------------------
+Challenge: 09-charCount
+
+Difficulty: Basic
+
+Prompt:
+
+- Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
+- The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
+- Upper and lower case characters should be counted separately.
+- Space characters should be count too.
+
+Examples:
+
+charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
+charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
+-----------------------------------------------------------------*/
+// Your solution for 09-charCount here:
+
+function charCount(string) {
+  let count = {}
+  for (i = 0; i < string.length; i++) {
+    var char = string.charAt(i);
+    if (count[char]) {
+      count[char]++;
+    } else {
+      count[char] = 1
+    }
+  }
+  return count
+}
+
+/*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
 
 Difficulty: Basic
@@ -599,7 +603,7 @@ function mumble(str) {
 /*--- using forEach ---*/
 function fromPairs(arr) {
   var obj = {};
-  arr.forEach(function(kvArr) {
+  arr.forEach(function (kvArr) {
     obj[kvArr[0]] = kvArr[1];
   });
   return obj;
@@ -633,9 +637,9 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 
 /*--- Using ES2015's rest parameter syntax ---*/
 function mergeObjects(target, ...objects) {
-  objects.forEach(function(obj) {
+  objects.forEach(function (obj) {
     // using ES2015's 'for in' loop
-    for(var key in obj) {
+    for (var key in obj) {
       target[key] = obj[key];
     }
   });
@@ -677,7 +681,7 @@ findHighestPriced([
 function findHighestPriced(arr) {
   var highestPrice = 0;
   var resultObj;
-  arr.forEach(function(item) {
+  arr.forEach(function (item) {
     if (item.price > highestPrice) {
       highestPrice = item.price;
       resultObj = item;
@@ -720,8 +724,8 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 
 function mapArray(arr, cb) {
   var newArr = [];
-  arr.forEach(function(el, idx) {
-    newArr.push( cb(el, idx) );
+  arr.forEach(function (el, idx) {
+    newArr.push(cb(el, idx));
   });
   return newArr;
 }
@@ -761,7 +765,7 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 
 function reduceArray(arr, cb, initAcc) {
   var acc = initAcc;
-  arr.forEach(function(el, idx) {
+  arr.forEach(function (el, idx) {
     acc = cb(acc, el, idx);
   });
   return acc;
@@ -797,7 +801,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 /*--- Using recursion ---*/
 function flatten(arr) {
   var flatArr = [];
-  arr.forEach(function(elem) {
+  arr.forEach(function (elem) {
     // use the Array.isArray static method to test if an array
     if (Array.isArray(elem)) {
       flatArr = flatArr.concat(flatten(elem));
@@ -878,7 +882,7 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 function primeFactors(n) {
   var factors = [];
   if (n < 2 || !Number.isInteger(n)) return factors;
-  
+
   // function to help find next prime to divide by...
   function isPrime(n) {
     if (n < 2 || !Number.isInteger(n)) return false;
@@ -887,8 +891,8 @@ function primeFactors(n) {
     }
     return true;
   }
-  
-  var prime = 2;  // start with smallest prime
+
+  var prime = 2; // start with smallest prime
   while (!isPrime(n)) {
     if (Number.isInteger(n / prime)) {
       factors.push(prime);
@@ -989,7 +993,7 @@ function balancedBrackets(str) {
   var stack = [];
   for (var i = 0; i < str.length; i++) {
     var b = str.charAt(i);
-    if ( '([{'.includes(b) ) {
+    if ('([{'.includes(b)) {
       // add opening brackets to the stack
       stack.push(b);
     } else {
@@ -1046,29 +1050,29 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 // Your solution for 24-isWinningTicket here:
 
 /* Naive for loops - :( */
-  function isWinningTicket(ticket){
-    var winner = true;
-    for (var i = 0; i < ticket.length; i++) {
-      var charFromNumber = String.fromCharCode(ticket[i][1]);
-      if (!ticket[i][0].includes(charFromNumber)) {
-        winner = false;
-        break;
-      }
+function isWinningTicket(ticket) {
+  var winner = true;
+  for (var i = 0; i < ticket.length; i++) {
+    var charFromNumber = String.fromCharCode(ticket[i][1]);
+    if (!ticket[i][0].includes(charFromNumber)) {
+      winner = false;
+      break;
     }
-    return winner;
   }
-  
-  /* Array.prototype.every is sweet */
-  // function isWinningTicket(ticket){
-  //   return ticket.every(function(arr) {
-  //     return arr[0].includes(String.fromCharCode(arr[1]));
-  //   });
-  // }
-  
-  /* Arrow functions help make concise one-liners possible */
-  // function isWinningTicket(ticket){
-  //   return ticket.every(arr => arr[0].includes(String.fromCharCode(arr[1])));
-  // }
+  return winner;
+}
+
+/* Array.prototype.every is sweet */
+// function isWinningTicket(ticket){
+//   return ticket.every(function(arr) {
+//     return arr[0].includes(String.fromCharCode(arr[1]));
+//   });
+// }
+
+/* Arrow functions help make concise one-liners possible */
+// function isWinningTicket(ticket){
+//   return ticket.every(arr => arr[0].includes(String.fromCharCode(arr[1])));
+// }
 
 
 /*-----------------------------------------------------------------
@@ -1101,8 +1105,8 @@ function getNumForIP(ip) {
   // reverse the chunks so that the we can use the index like 256**idx 
   var chunks = ip.split('.').reverse();
   var sum = 0;
-  chunks.forEach(function(chunk, idx) {
-    sum += parseInt(chunk) * 256**idx;
+  chunks.forEach(function (chunk, idx) {
+    sum += parseInt(chunk) * 256 ** idx;
   });
   return sum;
 }
@@ -1136,7 +1140,7 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 // Your solution for 26-toCamelCase here:
 
 function toCamelCase(str) {
-  return str.replace(/[_-]\w/g, function(match) {
+  return str.replace(/[_-]\w/g, function (match) {
     return match.charAt(1).toUpperCase();
   });
 }
@@ -1212,7 +1216,12 @@ function gridTrip(xyArr, moves) {
   // create result array with starting positions
   var result = [xyArr[0], xyArr[1]];
   // lookup object for result arr index and multipler for each dir char
-  const lookup = {'U': [0, 1], 'R': [1, 1], 'D': [0, -1], 'L': [1, -1]};
+  const lookup = {
+    'U': [0, 1],
+    'R': [1, 1],
+    'D': [0, -1],
+    'L': [1, -1]
+  };
   var idx = 0;
   while (idx < moves.length) {
     // first char of the move string is the direction to be used to access the lookup object
@@ -1242,7 +1251,7 @@ function gridTrip(xyArr, moves) {
 // }
 
 
-    
+
 // A complete binary tree is a binary tree that each level except possibiliy the last level, is completed filled. 
 // Suppose you are giving a binary tree represented as an array. For example, [3, 6, 2, 9, -1, 10] retpresents the 
 // following binary tree, where -1 indicates it is a NULL node.
@@ -1253,19 +1262,19 @@ function gridTrip(xyArr, moves) {
 // solution
 const solution = (arr) => {
   if (!arr) return "";
-  if (arr.length === 0){
-      return "";
+  if (arr.length === 0) {
+    return "";
   }
   var sum = (arr, i) => {
-      if(i - 1 < arr.length) {
-          if (arr[i - 1] === -1){
-              return 0;
-          }
-          return arr[i - 1] + sum(arr, i * 2) + sum(arr, i * 2 + 1);
+    if (i - 1 < arr.length) {
+      if (arr[i - 1] === -1) {
+        return 0;
       }
-      return 0;
+      return arr[i - 1] + sum(arr, i * 2) + sum(arr, i * 2 + 1);
+    }
+    return 0;
   }
-  const left = sum(arr,2);
+  const left = sum(arr, 2);
   const right = sum(arr, 3);
   return (left == right) ? "" : (left > right ? "Left" : "Right");
 };
@@ -1276,12 +1285,12 @@ const solution = (arr) => {
 // solution
 const solution = (numbers) => {
   var newList = Math.max(...numbers);
-   return newList;
+  return newList;
 };
 
 // Given an array of number, write a function to sort the array without using any naative sort functions
 
-  // unresolve problem
+// unresolve problem
 
 
 
@@ -1292,13 +1301,13 @@ const solution = (numbers) => {
 //output: true
 function palindrome(str) {
   var chrs = str.toLowerCase().replace(/[\W_]/g, "");
-  var firstHalf = chrs.substr(0,chrs.length/2);
-  var secondHalf = chrs.substr(chrs.length/2);
-  
-  if(chrs.length % 2 === 0){
-  	return firstHalf == secondHalf.split("").reverse().join("");
-  } else {  	
-    return firstHalf == secondHalf.substr(1).split("").reverse().join("");  	
+  var firstHalf = chrs.substr(0, chrs.length / 2);
+  var secondHalf = chrs.substr(chrs.length / 2);
+
+  if (chrs.length % 2 === 0) {
+    return firstHalf == secondHalf.split("").reverse().join("");
+  } else {
+    return firstHalf == secondHalf.substr(1).split("").reverse().join("");
   }
 }
 
@@ -1313,14 +1322,14 @@ console.log(palindrome('eye'));
 //N= 3
 //Output : 4
 function recursiveSteps(steps) {
-    var total = 1;
-  
-    for (var i = 2; i <= steps; i++) {
-      total += recursiveSteps(steps - i);
-    }
-  
-    return total;
+  var total = 1;
+
+  for (var i = 2; i <= steps; i++) {
+    total += recursiveSteps(steps - i);
   }
+
+  return total;
+}
 console.log(recursiveSteps(5))
 console.log(recursiveSteps(7))
 console.log(recursiveSteps(10))
@@ -1331,57 +1340,59 @@ console.log(recursiveSteps(10))
 // write a function that returns an integer, which is the maximun profit you can make from buying the stock then sell it.
 // if the list is empyt return 0
 
-function stock(prices){
-  var buy = -1, sell =-1, profit = -1;
+function stock(prices) {
+  var buy = -1,
+    sell = -1,
+    profit = -1;
   var changeSellPrice = true;
-  for(var i=0; i< prices.length; i++){
-    if(buy===-1){
-      buy= prices[i];
+  for (var i = 0; i < prices.length; i++) {
+    if (buy === -1) {
+      buy = prices[i];
     }
-    if(buy> prices[i]){
+    if (buy > prices[i]) {
       buy = prices[i];
       changeSellPrice = true;
-    }		
-    if(changeSellPrice || sell< prices[i+1] ){
-      sell = prices[i+1];
-      if(profit< (sell-buy)){
+    }
+    if (changeSellPrice || sell < prices[i + 1]) {
+      sell = prices[i + 1];
+      if (profit < (sell - buy)) {
         profit = sell - buy;
         changeSellPrice = false;
       }
     }
   }
-    return profit;
-  }
-  console.log(stock([6,0,-1,10]))
-  console.log(stock([8,0,3,10]))
+  return profit;
+}
+console.log(stock([6, 0, -1, 10]))
+console.log(stock([8, 0, 3, 10]))
 
 // Given two strings, return TRUE, if the strings are isomorphic and FALSE otherwise. 
 // Two strings are isomorphic when you can rewrite every occurence of a character with a diff character. for as many as you want
 // Only restriction is when you replace one character youo must replace all other chaaracters of that type
 
-function isomorphic (s, t) {
-	
-  var len1 = s.length;  
+function isomorphic(s, t) {
+
+  var len1 = s.length;
   if (len1 != t.length) {
-      console.log('Both strings have different lenghts');
+    console.log('Both strings have different lenghts');
     return false;
   }
-  
+
   var chMap = {};
-  
+
   for (var i = 0; i < len1; i++) {
-      if (!chMap[s[i]]) {   	
-          chMap[s[i]] = t[i];   
-      } else if (chMap[s[i]] !== t[i]) {
-        // console.log('Both strings differ in maaping at index ' + i);
-          return false;
-      }
+    if (!chMap[s[i]]) {
+      chMap[s[i]] = t[i];
+    } else if (chMap[s[i]] !== t[i]) {
+      // console.log('Both strings differ in maaping at index ' + i);
+      return false;
+    }
   }
   return true;
 }
 
-console.log(isomorphic('foo','bar'));
-console.log(isomorphic('papa','kike'));
+console.log(isomorphic('foo', 'bar'));
+console.log(isomorphic('papa', 'kike'));
 
 
 
@@ -1395,36 +1406,36 @@ console.log(isomorphic('papa','kike'));
 
 // The median is 2.0
 
-var findMedianSortedArrays = function(nums1, nums2) {
+var findMedianSortedArrays = function (nums1, nums2) {
   let totalCount = nums1.length + nums2.length;
   let combined = [];
   let a = nums1.shift();
   let b = nums2.shift();
   let count = 0;
   while (count < totalCount) {
-      if (typeof a === 'undefined') {
-          combined.push(b);
-          b = nums2.shift();
-      } else if (typeof b === 'undefined') {
-          combined.push(a);
-          a = nums1.shift();
-      } else if (a < b) {
-          combined.push(a);
-          a = nums1.shift();
-      } else {
-          combined.push(b);
-          b = nums2.shift();
-      }
-      count++;
+    if (typeof a === 'undefined') {
+      combined.push(b);
+      b = nums2.shift();
+    } else if (typeof b === 'undefined') {
+      combined.push(a);
+      a = nums1.shift();
+    } else if (a < b) {
+      combined.push(a);
+      a = nums1.shift();
+    } else {
+      combined.push(b);
+      b = nums2.shift();
+    }
+    count++;
   }
 
-  let middleIndex = Math.floor(combined.length/2);
-  if (combined.length % 2 != 0){
-      //Return the middle value if number of total elements is odd
-      return (combined[middleIndex]);
-  } else{
-      //Return the average of the middle values if number of total elements is even
-      return (combined[middleIndex-1] + combined[middleIndex])/2;
+  let middleIndex = Math.floor(combined.length / 2);
+  if (combined.length % 2 != 0) {
+    //Return the middle value if number of total elements is odd
+    return (combined[middleIndex]);
+  } else {
+    //Return the average of the middle values if number of total elements is even
+    return (combined[middleIndex - 1] + combined[middleIndex]) / 2;
   }
 };
 
@@ -1448,30 +1459,30 @@ var findMedianSortedArrays = function(nums1, nums2) {
 // Note: "aba" is also a valid answer.
 
 //first we check if it is palindrome 
-function isPalindrome (s) {
+function isPalindrome(s) {
   var pal = s.split('').reverse().join('');
   return s == pal;
 };
 
 // now we proceed to find the longest palindrome
-function longestPalindrome (s) {
+function longestPalindrome(s) {
   var max_length = 0;
   maxLen = '';
-  for(var i = 0; i< s.length; i++){
+  for (var i = 0; i < s.length; i++) {
     // we identify the substring and assign to a variable 
-      var subs = s.substr(i, s.length) 
-      for(var j = subs.length; j >= 0; j--){
-         var subStr = subs.substr(0,j);
-          if(subStr.length <= 1)
-              continue;
-          if (isPalindrome (subStr)){
-              if(subStr.length > max_length){
-                  max_length == subStr
-                  maxLen = subStr
-              }
-          }
-          
+    var subs = s.substr(i, s.length)
+    for (var j = subs.length; j >= 0; j--) {
+      var subStr = subs.substr(0, j);
+      if (subStr.length <= 1)
+        continue;
+      if (isPalindrome(subStr)) {
+        if (subStr.length > max_length) {
+          max_length == subStr
+          maxLen = subStr
+        }
       }
+
+    }
   }
   return maxLen;
 }
@@ -1485,20 +1496,20 @@ function longestPalindrome (s) {
 // There are three odd socks left, one of each color. The number of pairs is 2.
 
 // find the pair of socks
-function sortedCount (n, ar){
+function sortedCount(n, ar) {
   //built in sort() method
-let sorting = ar.sort((a, b) => a - b) 
-let result = 0;
-// we take in to the last index
-  for( i =0; i < n - 1; i++){
+  let sorting = ar.sort((a, b) => a - b)
+  let result = 0;
+  // we take in to the last index
+  for (i = 0; i < n - 1; i++) {
     //we compare box indexes and increment the result
-    if (sorting[i] === sorting[i + 1]){
-      result ++;
+    if (sorting[i] === sorting[i + 1]) {
+      result++;
       i += 1;
     }
   }
   return result;
-} 
+}
 
 // Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
@@ -1511,37 +1522,41 @@ let result = 0;
 // Output: "bb"
 
 function expandAroundCenterSolution(s) {
-  let start = 0, end = 0;
+  let start = 0,
+    end = 0;
   for (let i = 0; i < s.length; i++) {
-      let center = getCenter(s, i);
-      let bounds = expandAroundCenter(s, center[0], center[1]);
-      let L = bounds[0], R = bounds[1];
-      if (R - L > end - start) {
-          start = L;
-          end = R;
-      }
-      console.log("---");
-      i = center[1]; //move to the end of center, i++ will then shift pointer to index right after current center
+    let center = getCenter(s, i);
+    let bounds = expandAroundCenter(s, center[0], center[1]);
+    let L = bounds[0],
+      R = bounds[1];
+    if (R - L > end - start) {
+      start = L;
+      end = R;
+    }
+    console.log("---");
+    i = center[1]; //move to the end of center, i++ will then shift pointer to index right after current center
   }
   return s.substring(start, end + 1);
 }
 
 function expandAroundCenter(s, left, right) {
-  let L = left, R = right;
+  let L = left,
+    R = right;
 
   while (L >= 0 && R < s.length && s[L] === s[R]) {
-      L--;
-      R++;
+    L--;
+    R++;
   }
-  console.log("expand return " + (L+1) + ":" + (R-1));
+  console.log("expand return " + (L + 1) + ":" + (R - 1));
   return [++L, --R];
 }
 
-function getCenter(s,c){
-  let L = c, R = c;
+function getCenter(s, c) {
+  let L = c,
+    R = c;
   console.log("get center start index: " + c);
-  while(s[L] === s[++R] && R <= s.length );
-  console.log("return " + L + ":" + (R-1));
+  while (s[L] === s[++R] && R <= s.length);
+  console.log("return " + L + ":" + (R - 1));
   return [L, --R];
 }
 
@@ -1550,13 +1565,13 @@ function isPalindrome(s) {
   let k = 0;
   let l = s.length - 1;
   let isPalindrome = true;
-  while(k<=l) {
-      if (!(s.charAt(k) === s.charAt(l))) {
-          isPalindrome = false;
-          break;
-      }
-      k++;
-      l--;
+  while (k <= l) {
+    if (!(s.charAt(k) === s.charAt(l))) {
+      isPalindrome = false;
+      break;
+    }
+    k++;
+    l--;
   }
   return isPalindrome;
 }
@@ -1564,21 +1579,21 @@ function isPalindrome(s) {
 function bruteForce(s) {
 
   let maxPalindrome = "";
-  
-  for (let i = 0; i <= s.length-1; i++) {
-      for (let j = i+1; j <= s.length; j++) {
-          let subStr = s.substring(i, j)
-          console.log("check: " + subStr);
-          if (isPalindrome(subStr)) {
-              console.log(subStr + " is palindrome")
-              if (subStr.length > maxPalindrome.length) {
-                      maxPalindrome = subStr;
-              }
-          } 
+
+  for (let i = 0; i <= s.length - 1; i++) {
+    for (let j = i + 1; j <= s.length; j++) {
+      let subStr = s.substring(i, j)
+      console.log("check: " + subStr);
+      if (isPalindrome(subStr)) {
+        console.log(subStr + " is palindrome")
+        if (subStr.length > maxPalindrome.length) {
+          maxPalindrome = subStr;
+        }
       }
-      console.log("---");
-  }  
-  
+    }
+    console.log("---");
+  }
+
   return maxPalindrome;
 }
 
@@ -1611,17 +1626,18 @@ console.log("Longest Palindromic Substring: " + longestPalindrome(testCase));
 //find the string of a palindrome
 
 const str = 121;
-function isPalindrome (str) {
+
+function isPalindrome(str) {
   str = str.toString()
   // replace method and tolowercase method only if a string is given
   // str = str.replace(/\W/g, '');
   // str = str.toLowerCase();
-    console.log(str)
+  console.log(str)
   // iterate through the string 
-  for( let i = 0; i < str.length; i++){
+  for (let i = 0; i < str.length; i++) {
     console.log(i);
     // comparing the first letter in the string and the last letter in the string
-    if(str[i] !== str[str.length - 1 - i]){
+    if (str[i] !== str[str.length - 1 - i]) {
       return false;
     }
   }
@@ -1637,3 +1653,18 @@ function isPalindromeToo(str) {
   return str === str.split('').reverse().join('');
 }
 console.log(isPalindromeToo(str));
+
+
+//return the avrage of both scores
+var johnPoints = 333 / 3;
+var mikePoints = 339 / 3;
+
+console.log(johnPoints, mikePoints)
+
+if (mikePoints > johnPoints) {
+  console.log('mike is the winner with ' + mikePoints)
+} else if (mikePoints < johnPoints) {
+  console.log('John is the winner with ' + johnPoints)
+} else {
+  console.log('it\'s is draw')
+}
